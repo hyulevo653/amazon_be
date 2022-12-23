@@ -8,8 +8,8 @@ import userRouter from  './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import uploadRouter from './routes/uploadRoutes.js';
 
-import cors from 'cors'
-
+import cors from 'cors';
+import morgan from 'morgan';
 
 dotenv.config();
 console.log(process.env.MONGODB_URI);
@@ -24,7 +24,8 @@ mongoose
 
 const app = express();
 
-app.use(cors())
+app.use(cors("*"))
+app.user(morgan('dev'))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
