@@ -25,7 +25,7 @@ mongoose
 const app = express();
 
 app.use(cors("*"))
-app.user(morgan('dev'))
+app.use(morgan('dev'))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
